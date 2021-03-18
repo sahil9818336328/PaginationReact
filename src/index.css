@@ -41,7 +41,7 @@ Variables
   --transition: all 0.3s linear;
   --spacing: 0.1rem;
   --radius: 0.75rem;
-  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --light-shadow: 5px 5px 5px 0px var(--clr-primary-2);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
   --fixed-width: 620px;
@@ -59,8 +59,8 @@ Global Styles
 }
 body {
   font-family: "Montserrat", sans-serif;
-  background: var(--clr-grey-10);
-  color: var(--clr-grey-1);
+  background: var(--clr-primary-1);
+  color: var(--clr-white);
   line-height: 1.5;
   font-size: 0.875rem;
 }
@@ -98,6 +98,8 @@ p {
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 3rem;
+    text-shadow: 4px 4px 2px rgba(100, 100, 100, 1);
+    letter-spacing: 0.3rem;
   }
   h2 {
     font-size: 2.5rem;
@@ -150,9 +152,8 @@ Pagination
   }
 }
 .card {
-  background: var(--clr-white);
+  background: var(--clr-primary-3);
   border-radius: var(--radius);
-  box-shadow: var(--light-shadow);
   padding: 2rem 3.5rem;
   text-align: center;
 }
@@ -167,7 +168,7 @@ Pagination
 .card h4 {
   margin-bottom: 1.5rem;
   font-size: 0.85rem;
-  color: var(--clr-grey-5);
+  color: var(--clr-grey-2);
 }
 
 .btn {
@@ -175,12 +176,15 @@ Pagination
   letter-spacing: 1.6px;
   font-size: 0.75rem;
   color: var(--clr-white);
-  background: var(--clr-primary-5);
+  background: var(--clr-red-dark);
   border-radius: var(--radius);
   border-color: transparent;
   text-transform: uppercase;
   transition: var(--transition);
   cursor: pointer;
+}
+.btn:hover {
+  background-color: var(--clr-red-light);
 }
 
 .btn-container {
@@ -192,26 +196,31 @@ Pagination
   width: 2rem;
   height: 2rem;
   background: var(--clr-primary-7);
-  border-color: transparent;
+  border: 0.1px solid var(--clr-white);
   border-radius: 5px;
   cursor: pointer;
   margin: 0.5rem;
   transition: var(--transition);
+  outline: none;
 }
 .active-btn {
-  background: var(--clr-primary-1);
+  background: var(--clr-primary-4);
   color: var(--clr-white);
 }
 .prev-btn,
 .next-btn {
   background: transparent;
-  border-color: transparent;
+  border: 0.1px solid var(--clr-red-dark);
+  border-radius: 5px;
+  padding: 0.3rem 0.8rem;
   font-weight: bold;
   text-transform: capitalize;
   letter-spacing: var(--spacing);
   margin: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
+  outline: none;
+  color: var(--clr-white);
 }
 
 @media screen and (min-width: 775px) {
